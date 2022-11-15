@@ -5,4 +5,5 @@ Calibration for other displays (100% size):
   retake browse screenshot;
 no other displays, submit pull or contact me at Spiderfffun#0518 if you have one and want to help;
 
-how to use: calibrate if needed, run program, type screenshot amount and switch to new or replaceable tab to let the program do its thing. hold F9 if you want to stop it.
+how to use: calibrate if needed, run program, type screenshot amount and switch to new or replaceable tab to let the program do its thing.
+hold F9 if you want to stop it.
