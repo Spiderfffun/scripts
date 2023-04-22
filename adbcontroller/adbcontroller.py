@@ -4,7 +4,7 @@ import numpy as np
 
 def connect(port = input("What port is adb running on? ")):
     subprocess.run(['adb','disconnect'])
-    command = f"adb connect localhost:{port}"
+    command = f"adb connect localhost:{str(port)}"
     subprocess.run(command.split())
 
 def take_screenshot(name='screenshot'):
@@ -14,8 +14,8 @@ def take_screenshot(name='screenshot'):
 def write_to_console(command):
     subprocess.run(command.split())
 
-def find_image(image_to_recognize):
-    where_to_try_to_recognize_it = 'screenshot.png'
+def find_image(image_to_recognize, location='screenshot.png'):
+    where_to_try_to_recognize_it = location
     image_to_recognize = "recognition\\" + image_to_recognize
     img = cv2.imread(where_to_try_to_recognize_it)
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
