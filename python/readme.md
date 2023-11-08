@@ -1,4 +1,5 @@
 mouse mover: cool mouse moving utility
+
 music player: an attempt at making a music player
 prnt.sc search: a bot that automatically searches prnt.sc for images (TODO: make it use requests instead to run in the background)
 virus: no
