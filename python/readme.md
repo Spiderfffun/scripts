@@ -1,4 +1,4 @@
-mouse mover: cool mouse moving utility
+mouse mover: cool mouse moving utility (same for linux version)
 
 music player: an attempt at making a music player
 
